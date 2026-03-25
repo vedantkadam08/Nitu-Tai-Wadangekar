@@ -4,162 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitu Tai Wadangekar | Mumbai Mahila President - NCP (SP)</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <style>
-        :root {
-            --ncp-blue: #1a237e;
-            --ncp-saffron: #ff9800;
+        :root { 
+            --ncp-blue: #1a237e; 
+            --ncp-saffron: #ff9800; 
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth; 
+            overflow-x: hidden;
         }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
         .bg-ncp-blue { background-color: var(--ncp-blue); }
         .text-ncp-blue { color: var(--ncp-blue); }
         .bg-ncp-saffron { background-color: var(--ncp-saffron); }
-        .border-ncp-saffron { border-color: var(--ncp-saffron); }
         
-        .sticky-nav {
-            backdrop-filter: blur(10px);
-            background-color: rgba(26, 35, 126, 0.95);
+        .sticky-nav { 
+            backdrop-filter: blur(10px); 
+            background-color: rgba(26, 35, 126, 0.95); 
+            transition: all 0.3s ease;
         }
-        .hero-gradient {
-            background: linear-gradient(rgba(26, 35, 126, 0.7), rgba(26, 35, 126, 0.7)), 
-                        url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover;
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 35, 126, 0.75), rgba(26, 35, 126, 0.75)), 
+                        url('https://images.unsplash.com/photo-1577985043696-8bd54d95816f?q=80&w=2070');
+            background-size: cover; 
             background-position: center;
         }
+
+        /* Hover & Popup Animations */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .social-btn {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-btn:hover {
+            transform: scale(1.2) rotate(5deg);
+            filter: brightness(1.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--ncp-blue); border-radius: 10px; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50">
 
-    <nav class="sticky-nav fixed top-0 w-full z-50 text-white py-4 shadow-lg">
+    <nav class="sticky-nav fixed top-0 w-full z-50 text-white py-4 shadow-lg animate__animated animate__fadeInDown">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                    <span class="text-ncp-blue font-bold">⏱</span>
-                </div>
-                <span class="text-xl font-bold tracking-tight uppercase">Nitu Tai Wadangekar</span>
+            <div class="flex items-center gap-3">
+                <span class="text-2xl font-bold tracking-tight">NTW</span>
+                <div class="h-6 w-px bg-white/30"></div>
+                <span class="text-sm font-semibold uppercase tracking-widest hidden sm:block">NCP (Sharadchandra Pawar)</span>
             </div>
-            <div class="hidden md:flex gap-8 font-semibold uppercase text-sm tracking-widest">
-                <a href="#about" class="hover:text-orange-400 transition">About</a>
-                <a href="#issues" class="hover:text-orange-400 transition">Issues</a>
-                <a href="#leadership" class="hover:text-orange-400 transition">Leadership</a>
+            <div class="flex gap-4 items-center">
+                <a href="#contact" class="bg-ncp-saffron text-white px-5 py-2 rounded font-bold text-sm hover:bg-orange-600 transition shadow-md hover-lift">JOIN MOVEMENT</a>
             </div>
-            <a href="#contact" class="bg-ncp-saffron text-white px-6 py-2 rounded-full font-bold hover:bg-orange-600 transition shadow-md">
-                JOIN THE MOVEMENT
-            </a>
         </div>
     </nav>
 
-    <header class="hero-gradient h-screen flex items-center justify-center text-center text-white px-6">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-7xl mb-6">Nitu Tai Wadangekar: A Voice for Mumbai’s Women.</h1>
-            <p class="text-xl md:text-2xl mb-10 font-light italic">Mumbai Mahila President, Nationalist Congress Party (Sharadchandra Pawar)</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#about" class="bg-white text-ncp-blue px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition">Meet Nitu Tai</a>
-                <a href="#contact" class="border-2 border-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white hover:text-ncp-blue transition">Volunteer Today</a>
+    <header class="hero-section h-[85vh] flex items-center text-white px-6">
+        <div class="container mx-auto">
+            <div class="max-w-3xl animate__animated animate__fadeInLeft">
+                <h1 class="text-5xl md:text-7xl mb-4">Nitu Tai Wadangekar</h1>
+                <h2 class="text-2xl md:text-3xl text-orange-400 font-light mb-8 italic">Mumbai Mahila President, NCP (SP)</h2>
+                <p class="text-lg md:text-xl mb-10 opacity-90 leading-relaxed">
+                    A dedicated voice for Mumbai’s women, standing firm with the leadership of Shri Sharad Pawar Saheb to bring social justice and economic relief to every household.
+                </p>
+                <a href="#about" class="bg-white text-ncp-blue px-8 py-4 rounded font-bold hover:bg-gray-100 transition inline-block shadow-xl hover-lift">Learn More</a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <img src="https://images.unsplah.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Nitu Tai Wadangekar" class="rounded-lg shadow-2xl">
-                <div class="absolute -bottom-6 -right-6 bg-ncp-saffron p-6 rounded-lg hidden md:block">
-                    <p class="text-white font-bold text-2xl">20+ Years</p>
-                    <p class="text-white text-sm">Of Grassroots Service</p>
-                </div>
+    <section id="about" class="reveal py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal-left">
+                <img src="kaki.jpg" alt="Political Leadership" class="rounded shadow-2xl border-8 border-gray-50">
             </div>
-            <div>
-                <h2 class="text-4xl text-ncp-blue mb-6 border-l-8 border-ncp-saffron pl-4">A Grassroots Mobilizer</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Nitu Tai Wadangekar has dedicated her life to the principles of social justice and equality. As a staunch loyalist to <strong>Shri Sharad Pawar Saheb</strong>, she has consistently fought for the marginalized, ensuring that the voice of the common Mumbaikar reaches the highest corridors of power.
+            <div class="reveal-right">
+                <h2 class="text-4xl text-ncp-blue mb-6">Grassroots Leadership</h2>
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Nitu Tai Wadangekar serves as the <strong>Mumbai Mahila President</strong> for the Nationalist Congress Party (Sharadchandra Pawar). Her leadership is defined by an unwavering loyalty to the vision of Sharad Pawar and the core values of the Maha Vikas Aghadi (MVA).
                 </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Her journey is one of resilience and unwavering commitment to the NCP (SP) ideology. From local neighborhood circles to leading the Mahila wing in the heart of Mumbai, her leadership is defined by action, empathy, and organizational excellence.
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    As a mobilizer on the ground, she focuses on bridging the gap between policy and the people, ensuring that the struggles of Mumbai's working-class women are heard at the highest levels of governance.
                 </p>
+                <div class="flex gap-4 border-t pt-6 border-gray-100">
+                    <div class="text-ncp-blue">
+                        <span class="block font-bold text-xl italic text-ncp-saffron">"Loyalty to the Ideology, Service to the People."</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="issues" class="py-24 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl text-ncp-blue mb-16">Key Priorities for Mumbai</h2>
+    <section id="issues" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl text-ncp-blue">Key Issues & Advocacy</h2>
+                <div class="w-20 h-1 bg-ncp-saffron mx-auto mt-4"></div>
+            </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-xl shadow-lg border-b-4 border-ncp-blue hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-5xl mb-6">⚖️</div>
-                    <h3 class="text-2xl mb-4 text-ncp-blue">Women’s Rights & Safety</h3>
-                    <p class="text-gray-600">Strengthening security networks and legal aid for women across Mumbai's suburbs.</p>
+                <div class="reveal-card bg-white p-8 rounded shadow-sm border-t-4 border-ncp-blue hover-lift">
+                    <h3 class="text-xl font-bold mb-4">Women’s Rights & Safety</h3>
+                    <p class="text-gray-600">Championing the safety of women in Mumbai's public spaces and expanding access to legal resources.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-lg border-b-4 border-ncp-saffron hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-5xl mb-6">📉</div>
-                    <h3 class="text-2xl mb-4 text-ncp-blue">Economic Justice</h3>
-                    <p class="text-gray-600">Leading the fight against rising inflation and protecting the household budgets of common families.</p>
+                <div class="reveal-card bg-white p-8 rounded shadow-sm border-t-4 border-ncp-saffron hover-lift">
+                    <h3 class="text-xl font-bold mb-4">Combating Inflation</h3>
+                    <p class="text-gray-600">Addressing the rising cost of essential goods that impacts the daily lives of Mumbai's families.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-lg border-b-4 border-ncp-blue hover:transform hover:-translate-y-2 transition duration-300">
-                    <div class="text-5xl mb-6">🤝</div>
-                    <h3 class="text-2xl mb-4 text-ncp-blue">Social Welfare</h3>
-                    <p class="text-gray-600">Ensuring government schemes reach the last mile under the Maha Vikas Aghadi (MVA) vision.</p>
+                <div class="reveal-card bg-white p-8 rounded shadow-sm border-t-4 border-ncp-blue hover-lift">
+                    <h3 class="text-xl font-bold mb-4">Social Welfare</h3>
+                    <p class="text-gray-600">Working within the MVA framework to ensure government welfare schemes reach the marginalized sectors.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="leadership" class="py-24 bg-ncp-blue text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl mb-8">Leadership & Vision</h2>
-            <div class="max-w-3xl mx-auto">
-                <p class="text-xl mb-12 opacity-90">
-                    "As Mumbai Mahila Adhyaksh, my mission is to build a platform where every woman feels empowered to lead. Alongside the MVA, we are building a progressive Maharashtra that honors the legacy of our seniors while embracing the energy of the youth."
-                </p>
-                <div class="flex justify-center items-center gap-8 border-t border-blue-800 pt-12">
-                    <div class="text-center">
-                        <p class="text-3xl font-bold text-ncp-saffron">MVA</p>
-                        <p class="text-xs uppercase tracking-widest">Partner</p>
-                    </div>
-                    <div class="h-12 w-px bg-blue-800"></div>
-                    <div class="text-center">
-                        <p class="text-3xl font-bold text-ncp-saffron">Mumbai</p>
-                        <p class="text-xs uppercase tracking-widest">Jurisdiction</p>
+    <footer id="contact" class="bg-ncp-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 mb-12 border-b border-white/10 pb-12">
+                <div class="reveal-left">
+                    <h3 class="text-2xl font-bold mb-4">Nitu Tai Wadangekar</h3>
+                    <p class="opacity-70 mb-6">Mumbai Mahila President<br>Nationalist Congress Party (Sharadchandra Pawar)</p>
+                    <p class="text-ncp-saffron font-semibold">Official Symbol: Man Blowing Tutari (Trumpeter)</p>
+                </div>
+                <div class="md:text-right reveal-right">
+                    <h4 class="font-bold mb-4 uppercase tracking-widest text-sm">Official Social Media</h4>
+                    <div class="flex justify-center md:justify-end gap-6">
+                        <a href="https://www.instagram.com/nitu_tai_3777" target="_blank" class="social-btn bg-white/10 px-6 py-2 rounded-full border border-white/20 hover:bg-pink-600 flex items-center gap-2">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/@nituwadangekar" target="_blank" class="social-btn bg-white/10 px-6 py-2 rounded-full border border-white/20 hover:bg-red-600 flex items-center gap-2">
+                            <span>YouTube</span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="bg-white pt-16 pb-8 border-t">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
-            <div>
-                <h3 class="text-ncp-blue text-xl font-bold mb-4 uppercase tracking-tighter italic">NCP (Sharadchandra Pawar)</h3>
-                <p class="text-gray-500 text-sm">Official Website of Nitu Tai Wadangekar. Fighting for a just and equitable Mumbai.</p>
+            <div class="text-center text-sm opacity-50 reveal">
+                &copy; 2026 Nationalist Congress Party (Sharadchandra Pawar). All Rights Reserved.
             </div>
-            <div>
-                <h4 class="font-bold mb-4 text-ncp-blue">Contact Information</h4>
-                <p class="text-gray-600 text-sm">Mumbai Party Office, Maharashtra</p>
-                <p class="text-gray-600 text-sm">Email: contact@nitutai.in</p>
-            </div>
-            <div class="text-center md:text-right">
-                <h4 class="font-bold mb-4 text-ncp-blue">Follow the Journey</h4>
-                <div class="flex justify-center md:justify-end gap-4">
-                    <a href="https://instagram.com" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-ncp-saffron hover:text-white transition">
-                        IG
-                    </a>
-                    <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-ncp-saffron hover:text-white transition cursor-pointer">FB</div>
-                    <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-ncp-saffron hover:text-white transition cursor-pointer">X</div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 border-t pt-8 text-center text-gray-400 text-xs">
-            <p>&copy; 2026 Nitu Tai Wadangekar. All Rights Reserved. | Symbol: Man Blowing Tutari / Clock (Faction Focus)</p>
         </div>
     </footer>
+
+    <script>
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '60px',
+            duration: 1000,
+            delay: 200,
+            reset: false
+        });
+
+        sr.reveal('.reveal', {});
+        sr.reveal('.reveal-left', { origin: 'left' });
+        sr.reveal('.reveal-right', { origin: 'right' });
+        sr.reveal('.reveal-card', { interval: 200 });
+    </script>
 
 </body>
 </html>
